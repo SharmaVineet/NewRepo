@@ -4,7 +4,7 @@ stages {
    stage('Code-Compile') {
     steps {
      echo "Performing Code Compile"
-     sh 'mvn clean install'
+     //sh 'mvn clean install'
     }
    }	
    stage('Code-Test') {	
