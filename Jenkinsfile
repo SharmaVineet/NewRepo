@@ -13,7 +13,7 @@ pipeline
  			}
  			step("Code-Review"){
  				echo "Performing Code Review"
- 				mvn -P metrics pmd:pmd
+ 				mvn pmd:pmd
  			}
  			step("Code-Metric"){
  				echo "Performing Code Metric"
