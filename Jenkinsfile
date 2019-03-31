@@ -26,7 +26,7 @@ stages {
    stage('Code-Metric') {	
     steps {
      echo "Performing Code Metric"
-     //sh 'mvn cobertura:cobertura'
+     sh 'mvn cobertura:cobertura'
     }
    }
    stage('Code-Package') {	
