@@ -27,7 +27,7 @@ pipeline
  			}
  		}
  		stage("Code-Package"){	
- 			steps{
+ 			steps {
  				echo "Performing Code Packaging"
  				mvn package
  			}
