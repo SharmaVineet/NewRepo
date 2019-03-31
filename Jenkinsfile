@@ -2,27 +2,35 @@ pipeline
 {
 	agent any
 	stages {
- 		stage{
- 			step("Code-Compile"){
+ 		stage("Code-Compile"){
+ 			steps {
  				echo "Performing Code Compile"
  				mvn compile
  			}
- 			step("Code-Test"){
+ 		}	
+ 		stage("Code-Test"){	
+ 			steps {
  				echo "Performing Code Testing"
  				mvn test
  			}
- 			step("Code-Review"){
+ 		}
+ 		stage("Code-Review"){	
+ 			steps {
  				echo "Performing Code Review"
  				mvn pmd:pmd
  			}
- 			step("Code-Metric"){
+ 		}
+ 		stage("Code-Metric"){	
+ 			steps {
  				echo "Performing Code Metric"
  				mvn cobertura:cobertura -Dcobertura.report.format=xml
  			}
- 			step("Code-Package"){
+ 		}
+ 		stage("Code-Package"){	
+ 			steps{
  				echo "Performing Code Packaging"
  				mvn package
  			}
- 		}
- }
+ 		}	
+ 	}
 }
