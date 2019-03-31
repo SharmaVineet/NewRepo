@@ -1,34 +1,37 @@
 pipeline {
 agent any
+ tools {
+    maven 'LocalMaven'
+  }
 stages {
    stage('Code-Compile') {
     steps {
      echo "Performing Code Compile"
-     //sh 'mvn clean install'
+     sh 'mvn compile'
     }
    }	
    stage('Code-Test') {	
     steps {
      echo "Performing Code Testing"
-     //mvn test
+     sh 'mvn test'
     }
    }
    stage('Code-Review') {	
     steps {
      echo "Performing Code Review"
-     //mvn pmd:pmd
+     sh 'mvn pmd:pmd'
     }
    }
    stage('Code-Metric') {	
     steps {
      echo "Performing Code Metric"
-     //mvn cobertura:cobertura
+     sh 'mvn cobertura:cobertura'
     }
    }
    stage('Code-Package') {	
     steps {
      echo "Performing Code Packaging"
-     //mvn package
+     sh 'mvn package'
     }
    }	
   }
