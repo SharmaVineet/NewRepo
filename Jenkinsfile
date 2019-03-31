@@ -4,25 +4,25 @@ stages {
    stage('Code-Compile') {
     steps {
      echo "Performing Code Compile"
-     mvn compile
+     sh 'mvn clean install'
     }
    }	
    stage('Code-Test') {	
     steps {
      echo "Performing Code Testing"
-     mvn test
+     //mvn test
     }
    }
    stage('Code-Review') {	
     steps {
      echo "Performing Code Review"
-     mvn pmd:pmd
+     //mvn pmd:pmd
     }
    }
    stage('Code-Metric') {	
     steps {
      echo "Performing Code Metric"
-     mvn cobertura:cobertura
+     //mvn cobertura:cobertura
     }
    }
    stage('Code-Package') {	
