@@ -15,7 +15,7 @@ stages {
    }
    stage('Code-Review') {	
     steps {
-     echo "Performing Code Review First Time"
+     echo "Performing Code Review Second Time"
      sh 'mvn pmd:pmd'
     }
    }
