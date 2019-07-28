@@ -25,7 +25,7 @@ stages {
    }
    stage('Code-Metric') {	
     steps {
-     echo "Performing Code Metric"
+     echo "Performing Code Metric First Time"
      sh 'mvn cobertura:cobertura'
     }
    }
