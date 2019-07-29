@@ -1,0 +1,9 @@
+- name: Running playbook on remote host
+  hosts: "{{ host_group }}"
+  become_method: sudo
+  gather_facts: yes
+  connection: ssh
+
+  tasks:
+   - name: Printing Something
+     shell: echo "My Name is AWS Ansible Remote Host"
