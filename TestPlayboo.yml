@@ -1,8 +1,9 @@
 - name: Running playbook on remote host
-  hosts: "{{ host_group }}"
+  hosts: 18.209.175.141
   become_method: sudo
   gather_facts: yes
   connection: ssh
+  become_user: ec2-user
 
   tasks:
    - name: Printing Something
