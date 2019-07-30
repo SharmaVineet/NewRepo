@@ -1,3 +1,10 @@
+- name: Running playbook on local host
+  hosts: localhost
+  
+  tasks:
+    - name: Copying file into Jenkins workspace
+      copy: src=/var/lib/jenkins/workspace/EssentialKeyPair.pem dest=/var/lib/jenkins/workspace/GitHub/ remote_src=True
+
 - name: Running playbook on remote host
   hosts: 18.209.175.141
   become_method: sudo
@@ -6,7 +13,7 @@
   become_user: ec2-user
   
   vars:
-    ansible_ssh_private_key_file: "/home/ec2-user/EssentialKeyPair.pem"
+    ansible_ssh_private_key_file: "EssentialKeyPair.pem"
 
   tasks:
    - name: Printing Something
