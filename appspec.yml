@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: Jenkinsfile
-  - destination: /
+    destination: /
 hooks:
   BeforeInstall:
     - location: script.sh
