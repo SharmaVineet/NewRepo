@@ -9,7 +9,7 @@ stages {
    }	
    stage('Code-Test') {	
     steps {
-     echo "Performing Code Testing Second time"
+     echo "Performing Code Testing Second Time"
      sh 'mvn test'
     }
    }
